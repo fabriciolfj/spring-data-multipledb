@@ -1,0 +1,28 @@
+server:
+  port: 8855
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: springdata
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3308/users?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+    generate-ddl: true
+    show-sql: true
+
+
+prod:
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3307/products?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
